@@ -30,10 +30,11 @@ def schedule_checker():
         time.sleep(1)
 
 # Schedule job for 8 AM every day
-schedule.every().day.at("08:00").do(send_polls)
+schedule.every().day.at("08:30").do(send_polls)
 
 # Start scheduler in background
 threading.Thread(target=schedule_checker, daemon=True).start()
 
 print("Bot is running...")
 bot.infinity_polling()
+
